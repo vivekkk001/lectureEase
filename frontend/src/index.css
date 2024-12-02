@@ -1,0 +1,24 @@
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+.left-panel {
+  flex: 2;
+  overflow-y: auto;
+}
+
+.right-panel {
+  flex: 1;
+  border-left: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatbox-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 10px;
+}
