@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { FFmpeg } from "@ffmpeg/ffmpeg";
+import { Link } from 'react-router-dom';
 import { fetchFile, toBlobURL } from "@ffmpeg/util";
 import axios from "axios";
 import "./FileUpload.css";
+import "./Home.css";
 
 const MAX_FILE_SIZE = 100 * 1024 * 1024; // 100MB
 const ALLOWED_VIDEO_TYPES = ["video/mp4", "video/webm", "video/ogg"];
@@ -281,79 +283,93 @@ const FileUpload = () => {
       setProcessingStatus("");
     }
   };
+ 
 
   return (
+    <>
     <div className="home">
       <div className="container">
-        <div className="left-panel">
-          <div className="lecture-summary">
-            <h2>Lecture Summary</h2>
-            <h3>Upload your video to get an AI summary!</h3>
-          </div>
+        <div className="lectureEase">
+          <Link to="/">
+            <h1 className="text-4xl font-bold mb-4">LectureEase</h1>
+          </Link>
+        </div>
+        <div className="login">
+          <Link to="/" className="bg-white text-blue-500 font-bold py-2 px-4 rounded">
+            Logout
+          </Link>
+        </div>
+      </div>
+      <div className="left-panel">
+        <div className="lecture-summary">
+          <h2>Lecture Summary</h2>
+          <h3>Upload your video to get an AI summary!</h3>
+        </div>
 
-          <div className="file-upload-container">
-            <input
-              type="file"
-              accept="video/mp4, video/webm, video/ogg"
-              onChange={handleFileChange}
-            />
-            {errorMessage && <p className="error-message">{errorMessage}</p>}
-            {file && (
-              <button
-                className="upload-button"
-                onClick={handleUpload}
-                disabled={uploading}
-              >
-                {uploading ? "Uploading..." : "Upload and Summarize"}
-              </button>
-            )}
-          </div>
-
-          {processingStatus && (
-            <div className="processing-status">
-              <p>{processingStatus}</p>
-              <progress value={conversionProgress} max="100" />
-            </div>
-          )}
-
-          {showSuccess && (
-            <div className="success-message">
-              <p>Audio extracted and processed successfully!</p>
-            </div>
+        <div className="file-upload-container">
+          <input
+            type="file"
+            accept="video/mp4, video/webm, video/ogg"
+            onChange={handleFileChange}
+          />
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
+          {file && (
+            <button
+              className="upload-button"
+              onClick={handleUpload}
+              disabled={uploading}
+            >
+              {uploading ? "Uploading..." : "Upload and Summarize"}
+            </button>
           )}
         </div>
 
-        {showChatbot && (
-          <div className="right-panel">
-            <div className="chatbot-container">
-              <div className="summary-section">
-                <h4>Lecture Summary:</h4>
-                <p>{lectureSummary}</p>
-              </div>
-              <div className="chat-history">
-                {chatHistory.map((msg, idx) => (
-                  <div key={idx} className={msg.role}>
-                    <p>{msg.content}</p>
-                  </div>
-                ))}
-              </div>
-              <form
-                onSubmit={handleChatSubmit}
-                className="chat-input-container"
-              >
-                <input
-                  type="text"
-                  value={chatMessage}
-                  onChange={(e) => setChatMessage(e.target.value)}
-                  placeholder="Ask questions about the lecture..."
-                />
-                <button type="submit">Send</button>
-              </form>
-            </div>
+        {processingStatus && (
+          <div className="processing-status">
+            <p>{processingStatus}</p>
+            <progress value={conversionProgress} max="100" />
+          </div>
+        )}
+
+        {showSuccess && (
+          <div className="success-message">
+            <p>Summary Extracted Successfully!!<br></br>Proceed to the Chatbot</p>
           </div>
         )}
       </div>
+
+      {showChatbot && (
+        <div className="right-panel">
+          <div className="chatbot-container">
+            {/* <div className="summary-section">
+              <h4>Lecture Summary:</h4>
+              <p>{lectureSummary}</p>
+            </div> */}
+            <div className="chat-history">
+              {chatHistory.map((msg, idx) => (
+                <div key={idx} className={msg.role}>
+                  <p>{msg.content}</p>
+                </div>
+              ))}
+            </div>
+            <form
+              onSubmit={handleChatSubmit}
+              className="chat-input-container"
+            >
+              <input
+                type="text"
+                value={chatMessage}
+                onChange={(e) => setChatMessage(e.target.value)}
+                placeholder="Ask questions about the lecture..."
+              />
+              <button type="submit">Send</button>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
+    
+ </> 
   );
 };
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Home';
 import FileUpload from './FileUpload';
-import Summary from './Summary';
+// import Summary from './Summary';
 import Login from './components/login';
 import Signup from './components/signup';
 
@@ -19,7 +19,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/upload" element={<FileUpload setVideoUrl={setVideoUrl} />} />
-            <Route path="/summary" element={<Summary videoUrl={videoUrl} />} />
+            {/* <Route path="/summary" element={<Summary videoUrl={videoUrl} />} /> */}
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={< Signup />} />
           </Routes>

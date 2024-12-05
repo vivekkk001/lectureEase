@@ -58,13 +58,13 @@ const Home = () => {
 
         {/* Second Section: Paragraph and Get Started Button */}
         <div className="content-section">
-          <p className="text-xl mb-8 text-center max-w-2xl">
-            Upload your lecture videos, get instant summaries, translate to any language,
+          <p className="text-xl mb-8 text-center max-w-2xl custom-font">
+            Upload your lecture videos, get instant summaries
             and ask questions about the content using our intelligent chatbot.
           </p>
           <Link 
             to="/signup" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Get Started &gt;
+            Get Started ---&gt;
           </Link>
         </div>
       </div>
@@ -96,7 +96,7 @@ const Home = () => {
               </div>
               <div className='box'>
                 <h4>PHONE</h4>
-                <p>+91 9876543210</p>
+                <p>+91 9483913777</p>
               </div>
             </div>
 
