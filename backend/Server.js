@@ -4,7 +4,7 @@ const multer = require("multer");
 const axios = require("axios");
 const path = require("path");
 const cors = require("cors");
-const fs = require("fs"); // Use the regular fs for synchronous operations
+const fs = require("fs"); 
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -13,24 +13,24 @@ const authRoutes = require("./routes/auth");
 app.use(express.json());
 app.use(cors());
 
-// Connect to MongoDB
+
 mongoose
   .connect(
     "mongodb+srv://sanjaykamath7:qs0oEBdwmJMyNq23@cluster0.0p5hw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
-    { useNewUrlParser: true, useUnifiedTopology: true }
+    { useNewUrlParser: true, useUnifiedTopology: true, serverSelectionTimeoutMS: 30000 }
   )
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Error connecting to MongoDB:", err));
 
 app.use("/api", authRoutes);
 
-// Middleware setup
+
 app.use(cors());
 app.use(express.json());
 
-// Use the specified directory for uploads
+
 const uploadPath =
-  "D:/Project/Mini-Project/backend/uploads"; // Replace with your desired directory path
+  "D:/Project/Mini-Project/backend/uploads"; 
 if (!fs.existsSync(uploadPath)) {
   fs.mkdirSync(uploadPath, { recursive: true });
 }
@@ -70,7 +70,7 @@ const upload = multer({
   },
 }).single("audio");
 
-// Helper: Upload file contents directly to AssemblyAI
+// Uploads file contents directly to AssemblyAI
 async function uploadFileToAssemblyAI(filePath) {
   try {
     const audioFile = await fs.promises.readFile(filePath); // Read the file as binary data
@@ -98,7 +98,7 @@ async function uploadFileToAssemblyAI(filePath) {
   }
 }
 
-// Helper: Wait for transcription to complete
+//Wait for transcription to complete
 async function getTranscription(transcriptId) {
   const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   for (let attempt = 0; attempt < 60; attempt++) {
@@ -173,7 +173,7 @@ app.post("/api/upload-and-summarize", async (req, res) => {
 
     console.log("Summary generated:", summary);
 
-    // Save transcript and summary to the database
+   
     const newTranscript = new Transcript({
       filename: req.file.filename,
       transcript: transcriptText,
@@ -190,7 +190,6 @@ app.post("/api/upload-and-summarize", async (req, res) => {
   }
 });
 
-// Health check endpoint
 app.get("/health", (req, res) =>
   res.json({ status: "healthy", timestamp: new Date().toISOString() })
 );

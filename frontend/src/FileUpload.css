@@ -86,7 +86,6 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
 }
-
 .chat-history {
   flex: 1;
   overflow-y: auto; /* Allows scrolling for long chats */
@@ -96,30 +95,24 @@
   border-radius: 5px;
   border: 1px solid #ddd;
 }
-
 .chat-history::-webkit-scrollbar {
   width: 5px;
 }
-
 .chat-history::-webkit-scrollbar-thumb {
   background: #007bff;
   border-radius: 10px;
 }
-
 .chat-history .user {
   text-align: right;
   margin: 5px 0;
   padding: 8px;
   font-size: 22px;
   font-family: candara;
-  /* background-color: #f0f0f0; */
   color: #080202;
   border-radius: 15px 15px 0 15px;
-  /* display: inline-block; */
   max-width: 75%;
   margin-left: 150px;
 }
-
 .chat-history .bot {
   text-align: left;
   font-size: 22px;
@@ -129,16 +122,12 @@
   background-color: #f0f0f0;
   color: #333333;
   border-radius: 15px 15px 15px 0;
-  /* display: inline-block; */
   max-width: 75%;
 }
-
-
 .chat-input-container {
   display: flex;
   gap: 10px;
 }
-
 .chat-input-container input {
   flex: 1;
   padding: 10px;
@@ -146,7 +135,6 @@
   border-radius: 5px;
   font-size: 18px;
 }
-
 .chat-input-container button {
   padding: 10px 20px;
   background-color: #33938f;
@@ -158,11 +146,9 @@
   font-size: 18px;
   transition: background-color 0.3s ease;
 }
-
 .chat-input-container button:hover {
   background-color: #0056b3;
 }
-
 .chat-input-container button:disabled {
   background-color: #cccccc;
   cursor: not-allowed;

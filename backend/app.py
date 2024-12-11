@@ -5,13 +5,11 @@ from flask_cors import CORS
 from dotenv import load_dotenv
 import google.generativeai as genai
 
-# Load environment variables
 load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
 
-# Get API key from environment variable
 GOOGLE_API_KEY = os.getenv('GEMINI_API_KEY')
 
 if not GOOGLE_API_KEY:
@@ -55,7 +53,7 @@ def chat():
 
 User question: {user_message}
 
-Please answer only using information from the lecture summary provided above. If the question cannot be answered using the lecture summary, please respond with "I cannot answer this question based on the lecture content."
+Answer the questions asked and if the topic which was not discussed is asked respond with'No' and properly format the answer and also dont repeat the questions
 """
 
         # Generate response using Gemini

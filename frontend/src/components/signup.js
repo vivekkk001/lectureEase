@@ -1,53 +1,3 @@
-// // src/pages/Signup.js
-// import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
-// import axios from 'axios';
-
-// const Signup = () => {
-//     const [email, setEmail] = useState('');
-//     const [password, setPassword] = useState('');
-//     const [message, setMessage] = useState('');
-//     const navigate = useNavigate();
-
-//     const handleSignup = async (e) => {
-//         e.preventDefault();
-
-//         try {
-//             const response = await axios.post('http://localhost:5000/api/signup', { email, password });
-//             setMessage(response.data.message);
-//             navigate('/login'); // Redirect to login page
-//         } catch (err) {
-//             setMessage(err.response?.data?.message || 'Something went wrong');
-//         }
-//     };
-
-//     return (
-//         <div>
-//             <h2>Sign Up</h2>
-//             <form onSubmit={handleSignup}>
-//                 <input
-//                     type="email"
-//                     placeholder="Email"
-//                     value={email}
-//                     onChange={(e) => setEmail(e.target.value)}
-//                     required
-//                 />
-//                 <input
-//                     type="password"
-//                     placeholder="Password"
-//                     value={password}
-//                     onChange={(e) => setPassword(e.target.value)}
-//                     required
-//                 />
-//                 <button type="submit">Sign Up</button>
-//             </form>
-//             <p>{message}</p>
-//             <a href="/login">Already have an account? Login</a>
-//         </div>
-//     );
-// };
-
-// export default Signup;
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -76,7 +26,13 @@ const Signup = () => {
     };
 
     return (
-        <div className="signup-container">
+        <div className="home">
+            <div className="container">
+                <div className="lectureEase">
+                        <h1 className="text-4xl font-bold mb-4">LectureEase</h1>
+                </div>
+            </div>
+            <div className="signup-container">
             <h2>Sign Up</h2>
             <form onSubmit={handleSignup} className="signup-form">
                 <input
@@ -105,6 +61,7 @@ const Signup = () => {
             <p className="message">{message}</p>
             <a href="/login" className="login-link">Already have an account? Login</a>
         </div>
+     </div>   
     );
 };
 

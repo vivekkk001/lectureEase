@@ -1,22 +1,17 @@
-/* Login container */
 .login-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 70vh;
     background-color: #f9f9f9;
     font-family: 'Poppins', sans-serif;
 }
-
-/* Heading */
 .login-container h2 {
     font-size: 2rem;
     color: #1eb2a6;
     margin-bottom: 20px;
 }
-
-/* Login form */
 .login-form {
     display: flex;
     flex-direction: column;
@@ -27,7 +22,6 @@
     width: 100%;
     max-width: 400px;
 }
-
 .login-form input {
     margin-bottom: 15px;
     padding: 10px;
@@ -36,12 +30,10 @@
     border-radius: 5px;
     outline: none;
 }
-
 .login-form input:focus {
     border-color: #1eb2a6;
     box-shadow: 0 0 4px rgba(30, 178, 166, 0.5);
 }
-
 .login-form button {
     background-color: #1eb2a6;
     color: white;
@@ -52,19 +44,15 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
 .login-form button:hover {
     background-color: #169c91;
 }
-
-/* Message and link */
 .message {
     margin-top: 15px;
     font-size: 0.9rem;
     color: red;
     text-align: center;
 }
-
 .signup-link {
     margin-top: 10px;
     font-size: 0.9rem;
@@ -72,7 +60,6 @@
     text-decoration: none;
     transition: color 0.3s ease;
 }
-
 .signup-link:hover {
     color: #169c91;
 }
