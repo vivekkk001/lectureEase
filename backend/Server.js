@@ -16,7 +16,7 @@ app.use(cors());
 
 mongoose
   .connect(
-    "mongodb+srv://sanjaykamath7:qs0oEBdwmJMyNq23@cluster0.0p5hw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+    "MONGO_DB_URL paste here",
     { useNewUrlParser: true, useUnifiedTopology: true, serverSelectionTimeoutMS: 30000 }
   )
   .then(() => console.log("Connected to MongoDB"))
