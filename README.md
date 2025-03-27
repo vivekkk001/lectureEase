@@ -7,7 +7,6 @@ LectureEase is an innovative AI-powered learning platform built using the **MERN
 - 📌 **Lecture Transcription**: Converts lecture videos into detailed **text transcripts**  
 - 📝 **AI-powered Summarization**: Generates **concise summaries** for quick understanding  
 - 💡 **Interactive AI Chatbot**: Provides **real-time Q&A support** for students  
-- ⚡ **Built with MERN Stack**: Uses **MongoDB, Express.js, React, and Node.js** for scalability and efficiency  
 
 ## 📂 Tech Stack  
 - **Frontend**: React.js  
