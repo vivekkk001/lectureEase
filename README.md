@@ -1,20 +1,20 @@
 # LectureEase: AI-powered Lecture Summarization and Q&A Platform  
 
-## 🚀 Overview  
+##  Overview  
 LectureEase is an innovative AI-powered learning platform built using the **MERN stack**. It simplifies learning by automatically **transcribing, summarizing, and answering questions** related to lecture videos.  
 
-## 🎯 Features  
-- 📌 **Lecture Transcription**: Converts lecture videos into detailed **text transcripts**  
-- 📝 **AI-powered Summarization**: Generates **concise summaries** for quick understanding  
-- 💡 **Interactive AI Chatbot**: Provides **real-time Q&A support** for students  
+##  Features  
+-  **Lecture Transcription**: Converts lecture videos into detailed **text transcripts**  
+-  **AI-powered Summarization**: Generates **concise summaries** for quick understanding  
+-  **Interactive AI Chatbot**: Provides **real-time Q&A support** for students  
 
-## 📂 Tech Stack  
+##  Tech Stack  
 - **Frontend**: React.js  
 - **Backend**: Node.js, Express.js  
 - **Database**: MongoDB  
 - **AI Components**: Speech-to-text processing, NLP-based summarization, AI-powered Q&A
 
-## ⚙️ How It Works  
+##  How It Works  
 1️⃣ **Upload Lecture Video**  
    - The user uploads a lecture video to the platform.  
    - The backend processes the video and extracts audio for transcription.  
